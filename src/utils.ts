@@ -34,26 +34,6 @@ export const FAVICON_FILES: EasyFaviconGeneratorFile[] = [
   { name: "ms-icon-310x310", resolution: 310 },
 ];
 
-export const HTML_CODE = `
-<link rel="shortcut icon" href="/favicon.ico">
-<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-`;
-
 /**
  * Parse command line arguments into an object of flags
  * @returns An object containing the parsed flags from the command line arguments
@@ -138,4 +118,28 @@ export function getManifestCode(ext: string): string {
 export function getBrowserConfigCode(ext: string): string {
   return `<?xml version="1.0" encoding="utf-8"?>
 <browserconfig><msapplication><tile><square70x70logo src="/ms-icon-70x70.${ext}"/><square150x150logo src="/ms-icon-150x150.${ext}"/><square310x310logo src="/ms-icon-310x310.${ext}"/></tile></msapplication></browserconfig>`;
+}
+
+/**
+ * Return the HTML result code based on the files extension
+ * @param ext Destination files extension
+ * @returns {string} The HTML result code
+ */
+export function getHTMLCode(ext: string): string {
+  return `<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.${ext}">
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.${ext}">
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.${ext}">
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.${ext}">
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.${ext}">
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.${ext}">
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.${ext}">
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.${ext}">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.${ext}">
+<link rel="icon" type="image/${ext}" sizes="192x192"  href="/android-icon-192x192.${ext}">
+<link rel="icon" type="image/${ext}" sizes="32x32" href="/favicon-32x32.${ext}">
+<link rel="icon" type="image/${ext}" sizes="96x96" href="/favicon-96x96.${ext}">
+<link rel="icon" type="image/${ext}" sizes="16x16" href="/favicon-16x16.${ext}">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.${ext}">`;
 }

@@ -80,8 +80,6 @@ export {
   parseFlags,
   getManifestCode,
   getBrowserConfigCode,
-  HTML_CODE,
-  SUPPORTED_FLAGS,
 } from "./utils.js";
 export type {
   EasyFaviconGeneratorFlags,

@@ -82,7 +82,6 @@ writeAssetFiles('./public', 'png');
 | `getManifestCode(ext)` | Get the `manifest.json` content |
 | `getBrowserConfigCode(ext)` | Get the `browserconfig.xml` content |
 | `FAVICON_FILES` | List of all generated favicon definitions |
-| `HTML_CODE` | Ready-to-use HTML `<link>` tags |
 
 ---
 
