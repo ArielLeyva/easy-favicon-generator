@@ -1,0 +1,46 @@
+{
+  "name": "easy-favicon-generator",
+  "version": "1.0.0",
+  "description": "Generate favicon files for a website.",
+  "bin": {
+    "easy-favicon-generator": "dist/bin/easy-favicon-generator.js"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/src/index.js",
+      "types": "./dist/src/index.d.ts"
+    }
+  },
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx bin/easy-favicon-generator.ts",
+    "prepublishOnly": "npm run build",
+    "prepare": "pnpm build && chmod +x dist/bin/easy-favicon-generator.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "favicon",
+    "favicon-generator",
+    "ico-generator"
+  ],
+  "author": "ArielLeyva",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "type": "module",
+  "dependencies": {
+    "png-to-ico": "^3.0.2",
+    "sharp": "^0.35.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
