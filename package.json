@@ -42,5 +42,13 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ArielLeyva/easy-favicon-generator"
+  },
+  "bugs": {
+    "url": "https://github.com/ArielLeyva/easy-favicon-generator/issues"
+  },
+  "homepage": "https://github.com/ArielLeyva/easy-favicon-generator#readme"
 }
